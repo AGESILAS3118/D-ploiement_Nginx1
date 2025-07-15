@@ -1,0 +1,11 @@
+---
+- name: Créer un fichier de test
+  hosts: web
+  become: true
+
+  tasks:
+    - name: Créer un fichier /tmp/info.txt
+      copy:
+        content: "TP réussi avec Ansible !"
+        dest: /tmp/info.txt
+        mode: '0644'

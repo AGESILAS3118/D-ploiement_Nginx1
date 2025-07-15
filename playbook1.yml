@@ -1,0 +1,16 @@
+---
+- name: Installer Git et Curl
+  hosts: web
+  become: true
+
+  tasks:
+    - name: Installer Git
+      apt:
+        name: git
+        state: present
+        update_cache: yes
+
+    - name: Installer Curl
+      apt:
+        name: curl
+        state: present
